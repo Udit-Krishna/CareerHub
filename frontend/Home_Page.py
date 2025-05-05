@@ -14,7 +14,7 @@ CLIENT_ID = os.environ['GOOGLE_OAUTH_CLIENT_ID']
 CLIENT_SECRET = os.environ['GOOGLE_OAUTH_CLIENT_SECRET']
 REDIRECT_URI = os.environ['GOOGLE_OAUTH_REDIRECT_URI']
 
-cred = credentials.Certificate("careerhub-925c0.json")
+cred = credentials.Certificate("careerhub.json")
 
 try:
     firebase_admin.get_app()
