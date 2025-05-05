@@ -21,7 +21,6 @@ services:
     ports:
       - "8501:8501"
     environment:
-      # - BACKEND_URL=http://backend:8000
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - GOOGLE_OAUTH_CLIENT_ID=${GOOGLE_OAUTH_CLIENT_ID}
       - GOOGLE_OAUTH_CLIENT_SECRET=${GOOGLE_OAUTH_CLIENT_SECRET}

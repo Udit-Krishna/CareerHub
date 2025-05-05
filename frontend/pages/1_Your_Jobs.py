@@ -9,7 +9,6 @@ import json
 main_page = __import__("Home_Page")
 API_BASE = "http://backend:8000"
 
-# st.set_page_config(page_title="Your Jobs", layout="wide")
 os.makedirs("resume/", exist_ok=True)
 os.makedirs("cover-letter/", exist_ok=True)
 openai_client = OpenAI(
@@ -56,12 +55,12 @@ if st.session_state.user_email and st.session_state.user_name:
         new_tab = st.text_input("➕ New Job", key="new_tab_input")
         if st.button("Add Job"):
             if new_tab and new_tab not in st.session_state.tabs:
-                # st.session_state.tabs.append(new_tab)
                 add_tab_to_api(new_tab)
                 st.session_state.tabs = fetch_tabs_from_api()
                 st.success(f"Added Job: {new_tab}")
             elif new_tab in st.session_state.tabs:
                 st.warning("Job already exists.")
+        
         # Delete Tab
         if st.session_state.tabs:
             tab_to_delete = st.selectbox("❌ Select Job to Delete", st.session_state.tabs)
@@ -89,6 +88,7 @@ if st.session_state.user_email and st.session_state.user_name:
                 st.warning(f"Deleted Job: {tab_to_delete}")
 
         st.divider()
+        
         # Logout button
         if st.button("Logout", type="primary", key="logout"):
             st.session_state.user_email = ''
@@ -117,6 +117,7 @@ if st.session_state.user_email and st.session_state.user_name:
             with tab:
                 st.subheader(f"💼 {job_name}")
                 job_url = st.text_input("Job URL", key=job_url_key)
+                
                 # Show "Get Description" button if no description is present
                 if not st.session_state.get(job_desc_key, ""):
                     if st.button("🔍 Get Description", key=f"btn_fetch_{job_name}"):
