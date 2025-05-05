@@ -1,0 +1,9 @@
+.env
+.DS_Store
+.venv/
+__pycache__/
+careerhub-925c0.json
+backend/resume/*
+frontend/resume/*
+backend/cover-letter/*
+frontend/cover-letter/*
