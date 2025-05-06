@@ -42,7 +42,7 @@ git clone https://github.com/Udit-Krishna/CareerHub.git
 cd CareerHub
 ```
 
-2. Create a Firebase Application and save the credentials JSON file in `./frontend/careerhub` as `careerhub.json`
+2. Create a Firebase Application and save the credentials JSON file in `./frontend/` as `careerhub.json`
 
 3. Create .env file. Enter relevant details in place of `...`
 ```env
@@ -70,6 +70,14 @@ PGADMIN_DEFAULT_PASSWORD="admin"
     ```
 
 5.	Access the website using this URL in your browser: http://localhost:8501
+
+6.	To Access pgAdmin
+
+    Open your browser and go to: http://localhost:5050
+
+  	Login with:
+       - Email: admin@admin.com
+       - Password: admin
 
 
 ## 🧠 Technologies Used
